@@ -15,7 +15,31 @@
 
         <button type="submit">Enviar</button>
     </form>
+    <p id="message"></p>
 
+    <script>
+
+        const form = document.getElementById("loginForm");
+
+        const message = document.getElementById("message");
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const username = document.getElementById("username").value
+            const password = document.getElementById("password").value
+
+            if(username == "admin" && password == "admin123") {
+
+                message.textContent = 'Login bem-sucedido!';
+            } else {
+
+                message.textContent = "Usuário ou senha inválido!"
+
+            }
+
+        } )
+    </script>
 
 </body>
 </html>
